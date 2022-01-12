@@ -9,8 +9,10 @@ class ProductsController < ApplicationController
     render json: product.as_json
   end
 
-  def second_product
-    product = Product.find_by(id: 2)
+  def any_product
+    product_id = params[:id]
+    product = Product.find_by(id: product_id)
     render json: product.as_json
   end
+
 end
