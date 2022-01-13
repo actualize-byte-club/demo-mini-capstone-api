@@ -3,4 +3,5 @@ Rails.application.routes.draw do
   get "/first_product" => "products#first_product"
 
   get "/any_product" => "products#any_product"
+  get "/any_product/:id" => "products#any_product"
 end
