@@ -1,6 +1,10 @@
 class Product < ApplicationRecord
   
-  validates :name, presence: true
+  validates :name, presence: true, uniqueness: true
+  validates :price, numericality: { greater_than: 0 }
+  validates :image_url, presence: true
+  validates :description, presence: true, length: { in: 10..500 }
+  validates :quantity, presence: true, numericality: true
 
   def is_discounted?
     price < 10
@@ -14,11 +18,3 @@ class Product < ApplicationRecord
     price + tax
   end
 end
-
-
-# Product Model Validations
-# name presence/uniqueness
-# price presence/numericality (not a negative number)
-# image_url presence
-# description length range (in)
-# quantity presence

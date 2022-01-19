@@ -1,5 +1,14 @@
 ### Produts Index
 GET http://localhost:3000/products
 
+### Produts Create
+POST http://localhost:3000/products
+Content-Type: application/json
+
+{
+  "name": "",
+  "price": "5"
+}
+
 ### Products Show
 GET http://localhost:3000/products/1
