@@ -6,9 +6,23 @@ POST http://localhost:3000/products
 Content-Type: application/json
 
 {
-  "name": "",
-  "price": "5"
+  "name": "D&D Players Handbook",
+  "price": "50",
+  "image_url": "https://cdn.shoplightspeed.com/shops/641636/files/27803028/1600x2048x2/wizards-of-the-coast-dnd-5th-edition-players-handb.jpg",
+  "description": "A lovely 5th edition handbook for your players.",
+  "quantity": 6
 }
 
 ### Products Show
 GET http://localhost:3000/products/1
+
+### Products Update
+PATCH http://localhost:3000/products/1
+Content-Type: application/json
+
+{
+  "quantity": 6
+}
+
+### Products Destroy
+DELETE http://localhost:3000/products/1
