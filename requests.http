@@ -1,5 +1,5 @@
 ### Produts Index
-GET http://localhost:3000/products
+GET http://localhost:3000/products?discount=true
 
 ### Produts Create
 POST http://localhost:3000/products
