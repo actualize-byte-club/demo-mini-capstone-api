@@ -1,6 +1,9 @@
 class ProductsController < ApplicationController
   def index
-    products = Product.title_search(params[:search]).discounted(params[:discount]).sorted(params[:sort], params[:sort_order])
+    products = Product
+      .title_search(params[:search])
+      .discounted(params[:discount])
+      .sorted(params[:sort], params[:sort_order])
     # if params[:search]
     #   products = products.where("name iLike ?", "%#{params[:search]}%")
     # end
