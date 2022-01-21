@@ -6,6 +6,11 @@ class Product < ApplicationRecord
   validates :description, presence: true, length: { in: 10..500 }
   validates :quantity, presence: true, numericality: true
 
+  # def supplier
+  #   Supplier.find_by(id: supplier_id)
+  # end
+  belongs_to :supplier
+
   def is_discounted?
     price < 10
   end
