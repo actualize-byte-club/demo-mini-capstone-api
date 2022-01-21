@@ -14,7 +14,7 @@ Content-Type: application/json
 }
 
 ### Products Show
-GET http://localhost:3000/products/1
+GET http://localhost:3000/products/2
 
 ### Products Update
 PATCH http://localhost:3000/products/1
