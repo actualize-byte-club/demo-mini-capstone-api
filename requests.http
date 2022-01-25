@@ -1,8 +1,11 @@
+@domain = http://localhost:3000
+@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2NDMyMjc3ODl9.J5cmxXVUtEJ-t0ITLhBpL5w4zrlpA_-NYuMD9XXM2ac
+
 ### Produts Index
-GET http://localhost:3000/products?discount=true
+GET {{ domain }}/products?discount=true
 
 ### Produts Create
-POST http://localhost:3000/products
+POST {{ domain }}/products
 Content-Type: application/json
 
 {
@@ -13,10 +16,10 @@ Content-Type: application/json
 }
 
 ### Products Show
-GET http://localhost:3000/products/2
+GET {{ domain }}/products/2
 
 ### Products Update
-PATCH http://localhost:3000/products/1
+PATCH {{ domain }}/products/1
 Content-Type: application/json
 
 {
@@ -24,24 +27,42 @@ Content-Type: application/json
 }
 
 ### Products Destroy
-DELETE http://localhost:3000/products/1
+DELETE {{ domain }}/products/1
 
 ### Users create (signup)
-POST http://localhost:3000/users
+POST {{ domain }}/users
 Content-Type: application/json
 
 {
-  "name": "Ace",
-  "email": "ace@gmail.com",
+  "name": "Cheddar",
+  "email": "cheddar@gmail.com",
   "password": "password",
   "password_confirmation": "password"
 }
 
 ### Sessions create (login)
-POST http://localhost:3000/sessions
+POST {{ domain }}/sessions
 Content-Type: application/json
 
 {
-  "email": "ace@gmail.com",
+  "email": "cheddar@gmail.com",
   "password": "password"
 }
+
+### Orders index
+GET {{ domain }}/orders
+Authorization: Bearer {{ jwt }}
+
+### Orders create
+POST {{ domain }}/orders
+Content-Type: application/json
+Authorization: Bearer {{ jwt }}
+
+{
+  "product_id": 4,
+  "quantity": 5
+}
+
+### Orders show
+GET {{ domain }}/orders/3
+Authorization: Bearer {{ jwt }}
