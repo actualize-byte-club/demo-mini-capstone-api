@@ -1,9 +1,9 @@
 class Product < ApplicationRecord
   
-  validates :name, presence: true, uniqueness: true
-  validates :price, numericality: { greater_than: 0 }
-  validates :description, presence: true, length: { in: 10..700 }
-  validates :quantity, presence: true, numericality: true
+  # validates :name, presence: true, uniqueness: true
+  # validates :price, numericality: { greater_than: 0 }
+  # validates :description, presence: true, length: { in: 10..700 }
+  # validates :quantity, presence: true, numericality: true
 
   # def supplier
   #   Supplier.find_by(id: supplier_id)

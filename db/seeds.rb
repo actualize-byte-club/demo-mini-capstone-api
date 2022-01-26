@@ -2,7 +2,7 @@ User.create!([
   {name: "Ace", email: "ace@gmail.com", password: "password"},
   {name: "Cheddar", email: "cheddar@gmail.com", password: "password"}
 ])
-Supplier.create!([
+suppliers = Supplier.create!([
   {name: "Dumbledoor's Wizardry Supplies", email: "dws@gmail.com", phone_number: "222-3333"},
   {name: "Thinkgeek", email: "thinkgeek@gmail.com", phone_number: "444-5555"}
 ])

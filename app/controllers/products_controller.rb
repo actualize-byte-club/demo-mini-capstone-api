@@ -1,4 +1,7 @@
 class ProductsController < ApplicationController
+  before_action :authenticate_admin, except: [:index, :show]
+  # before_action :authenticate_admin, only: [:create, :update, :destroy]
+  
   def index
     products = Product
       .title_search(params[:search])
@@ -27,7 +30,8 @@ class ProductsController < ApplicationController
       name: params[:name],
       price: params[:price],
       description: params[:description],
-      quantity: params[:quantity]
+      quantity: params[:quantity],
+      supplier_id: params[:supplier_id]
     )
     if product.save
       render json: product

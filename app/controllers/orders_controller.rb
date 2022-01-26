@@ -1,11 +1,9 @@
 class OrdersController < ApplicationController
+  before_action :authenticate_user
+  
   def index
-    if current_user
-      orders = current_user.orders
-      render json: orders
-    else
-      render json: [], status: :unauthorized
-    end
+    orders = current_user.orders
+    render json: orders
   end
 
   def create
