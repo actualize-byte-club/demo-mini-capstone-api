@@ -12,6 +12,13 @@ class Product < ApplicationRecord
   has_many :images
   has_many :orders
   has_many :product_categories
+  has_many :categories, through: :product_categories
+  
+  # def categories
+  #   product_categories.map do |handshake|
+  #     handshake.category
+  #   end
+  # end
 
   def is_discounted?
     price < 10
