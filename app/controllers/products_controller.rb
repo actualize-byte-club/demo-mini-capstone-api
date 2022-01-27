@@ -3,10 +3,10 @@ class ProductsController < ApplicationController
   # before_action :authenticate_admin, only: [:create, :update, :destroy]
   
   def index
-    products = Product
-      .title_search(params[:search])
-      .discounted(params[:discount])
-      .sorted(params[:sort], params[:sort_order])
+    products = Product.all
+      # .title_search(params[:search])
+      # .discounted(params[:discount])
+      # .sorted(params[:sort], params[:sort_order])
     # if params[:search]
     #   products = products.where("name iLike ?", "%#{params[:search]}%")
     # end
@@ -22,6 +22,10 @@ class ProductsController < ApplicationController
     # else
     #   products = products.order(:id)
     # end
+    if params[:category]
+      category = Category.find_by(name: params[:category])
+      products = category.products
+    end
     render json: products
   end
 

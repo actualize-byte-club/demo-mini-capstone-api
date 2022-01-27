@@ -2,7 +2,7 @@
 @jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2NDMzMDQ4NDR9.5kyXdNY_MAIKtSJr5MgCQHc5COlOig7OChhFgwVTfCY
 
 ### Produts Index
-GET {{ domain }}/products
+GET {{ domain }}/products?category=Damage
 
 ### Produts Create
 POST {{ domain }}/products
