@@ -1,5 +1,5 @@
 @domain = http://localhost:3000
-@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2NDMzMDQ4NDR9.5kyXdNY_MAIKtSJr5MgCQHc5COlOig7OChhFgwVTfCY
+@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NDM0OTE4NjV9.04EbfTXoRtdjJYf3tmPjH-8KyDlyAHkP5lNGQd99Bn8
 
 ### Produts Index
 GET {{ domain }}/products?category=Damage
@@ -48,7 +48,7 @@ POST {{ domain }}/sessions
 Content-Type: application/json
 
 {
-  "email": "cheddar@gmail.com",
+  "email": "ace@gmail.com",
   "password": "password"
 }
 
@@ -58,14 +58,22 @@ Authorization: Bearer {{ jwt }}
 
 ### Orders create
 POST {{ domain }}/orders
-Content-Type: application/json
 Authorization: Bearer {{ jwt }}
-
-{
-  "product_id": 4,
-  "quantity": 5
-}
 
 ### Orders show
 GET {{ domain }}/orders/3
 Authorization: Bearer {{ jwt }}
+
+### Carted Products Index
+GET {{ domain }}/carted_products
+Authorization: Bearer {{ jwt }}
+
+### Carted Products Create
+POST {{ domain }}/carted_products
+Content-Type: application/json
+Authorization: Bearer {{ jwt }}
+
+{
+  "product_id": 1,
+  "quantity": 2
+}
