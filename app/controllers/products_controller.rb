@@ -4,28 +4,6 @@ class ProductsController < ApplicationController
   
   def index
     products = Product.all
-      # .title_search(params[:search])
-      # .discounted(params[:discount])
-      # .sorted(params[:sort], params[:sort_order])
-    # if params[:search]
-    #   products = products.where("name iLike ?", "%#{params[:search]}%")
-    # end
-    # if params[:discount]
-    #   products = products.where("price < ?", 10)
-    # end
-    # if params[:sort] == "price"
-    #   if params[:sort_order] == "desc"
-    #     products = products.order(price: :desc)
-    #   else
-    #     products = products.order(:price)
-    #   end
-    # else
-    #   products = products.order(:id)
-    # end
-    if params[:category]
-      category = Category.find_by(name: params[:category])
-      products = category.products
-    end
     render json: products
   end
 
@@ -68,3 +46,31 @@ class ProductsController < ApplicationController
     render json: { message: "Product destroyed successfully!" }
   end
 end
+
+
+
+
+
+
+# .title_search(params[:search])
+      # .discounted(params[:discount])
+      # .sorted(params[:sort], params[:sort_order])
+    # if params[:search]
+    #   products = products.where("name iLike ?", "%#{params[:search]}%")
+    # end
+    # if params[:discount]
+    #   products = products.where("price < ?", 10)
+    # end
+    # if params[:sort] == "price"
+    #   if params[:sort_order] == "desc"
+    #     products = products.order(price: :desc)
+    #   else
+    #     products = products.order(:price)
+    #   end
+    # else
+    #   products = products.order(:id)
+    # end
+    # if params[:category]
+    #   category = Category.find_by(name: params[:category])
+    #   products = category.products
+    # end
